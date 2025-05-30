@@ -1,0 +1,4 @@
+numpy
+ifcopenshell
+PyQt5
+PyOpenGL 

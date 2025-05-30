@@ -1,0 +1,38 @@
+# Build Instructions for cppsolver (C++/pybind11 FEM Solver)
+
+## Prerequisites
+- CMake >= 3.12
+- Python (with development headers)
+- pybind11 (can be installed via pip: `pip install pybind11`)
+- C++ compiler (MSVC, GCC, or Clang)
+
+## Build Steps
+
+1. Open a terminal and navigate to this directory:
+
+   cd engine/core/analysis
+
+2. Create a build directory and enter it:
+
+   mkdir build
+   cd build
+
+3. Run CMake to configure the project:
+
+   cmake .. -DPYTHON_EXECUTABLE=$(which python)
+
+   # On Windows, you may need to specify the generator, e.g.:
+   # cmake .. -G "Visual Studio 17 2022" -A x64
+
+4. Build the module:
+
+   cmake --build .
+
+5. The resulting `cppsolver` module (cppsolver.so or cppsolver.pyd) will be in the build directory.
+   Copy it to your Python path or the directory of your Python script to import as `import cppsolver`.
+
+## Test
+
+Run the example:
+
+   python ../../examples/cpp_solver_example.py 
